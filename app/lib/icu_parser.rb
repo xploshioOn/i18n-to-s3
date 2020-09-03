@@ -1,5 +1,5 @@
 class IcuParser
-  FROM = "en"
+  FROM = 'en'.freeze
 
   attr_reader :pattern, :lang
 
@@ -35,7 +35,7 @@ class IcuParser
           else
             "{#{value}}"
           end
-        end.join(" ")
+        end.join(' ')
 
         new_hash[k] = mapped
       end
@@ -51,7 +51,7 @@ class IcuParser
       handle_hash(text, level)
     elsif level.even?
       translate_text(text)
-    elsif force_brackets && text != "#"
+    elsif force_brackets && text != '#'
       "{#{text}}"
     else
       text

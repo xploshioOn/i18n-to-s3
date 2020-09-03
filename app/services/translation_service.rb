@@ -20,6 +20,6 @@ class TranslationService
   end
 
   def api_key
-    ENV["GOOGLE_CLOUD_KEY"]
+    ENV['GOOGLE_CLOUD_KEY']
   end
 end

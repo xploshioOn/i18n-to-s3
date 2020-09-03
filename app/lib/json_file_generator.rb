@@ -1,4 +1,4 @@
-class JsonFileGenerator 
+class JsonFileGenerator
   include FileGenerator
   include TranslationsUpdater
 

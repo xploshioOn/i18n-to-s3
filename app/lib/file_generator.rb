@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 module FileGenerator
-  FROM = "en"
+  FROM = 'en'
 
   def initialize(options = {})
     @lang = options.fetch(:lang)
     @source_file = options.fetch(:source_file)
     @target_file = options.fetch(:target_file)
     @regexp = options.fetch(:regexp)
-    @placeholder_repl = options.fetch(:placeholder_repl, "{{---}}")
+    @placeholder_repl = options.fetch(:placeholder_repl, '{{---}}')
     @translator = TranslationService.new
   end
 
@@ -46,6 +46,4 @@ module FileGenerator
   def retrieve_translation_result(text:, to:)
     translator.translate(text: text, from: FROM, to: to).text
   end
-
 end
-

@@ -1,12 +1,12 @@
 Jets.application.configure do
-  config.project_name = "i18n-to-s3"
-  config.mode = "api"
+  config.project_name = 'i18n-to-s3'
+  config.mode = 'api'
 
   config.prewarm.enable = false # default is true
 
-  config.domain.hosted_zone_name = ENV["HOSTED_ZONE_NAME"]
-  config.domain.name = ENV["DOMAIN_NAME"]
-  config.domain.cert_arn = ENV["CERT_ARN"]
+  config.domain.hosted_zone_name = ENV['HOSTED_ZONE_NAME']
+  config.domain.name = ENV['DOMAIN_NAME']
+  config.domain.cert_arn = ENV['CERT_ARN']
 
   config.function.memory_size = 256
 
@@ -54,7 +54,6 @@ Jets.application.configure do
 
   # config.api.endpoint_type = 'PRIVATE' # Default is 'EDGE' https://amzn.to/2r0Iu2L
   # config.api.authorization_type = "AWS_IAM" # default is 'NONE' https://amzn.to/2qZ7zLh
-
 
   # More info: http://rubyonjets.com/docs/routing/custom-domain/
   # config.domain.hosted_zone_name = "example.com"

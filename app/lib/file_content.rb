@@ -1,5 +1,4 @@
 class FileContent
-
   def initialize(options = {})
     @source = options[:source]
     @target = options[:target]
@@ -9,7 +8,7 @@ class FileContent
 
   FILES = ["#{@language}.#{@type}"].freeze
   PLACEHOLDER_REGEXP_JSON = /{[a-zA-Z_-]*}/.freeze
-  PLACEHOLDER_REGEXP_YAML =  /%{[a-zA-Z_-]*}/.freeze
+  PLACEHOLDER_REGEXP_YAML = /%{[a-zA-Z_-]*}/.freeze
 
   def generate_file
     new_generator(@file_type).generate_file!
@@ -22,8 +21,8 @@ class FileContent
   private
 
   def new_generator(file_type)
-    return json_generator if file_type == "json"
-    
+    return json_generator if file_type == 'json'
+
     yaml_generator
   end
 
@@ -33,12 +32,12 @@ class FileContent
       source_file: @source,
       target_file: @target,
       regexp: PLACEHOLDER_REGEXP_JSON,
-      placeholder_repl: "{---}"
+      placeholder_repl: '{---}'
     )
   end
 
   def yaml_generator
-    @target = @source.gsub("en:", "#{@language}:")
+    @target = @source.gsub('en:', "#{@language}:")
     YamlFileGenerator.new(
       lang: @language,
       source_file: @source,

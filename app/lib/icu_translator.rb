@@ -12,7 +12,7 @@ class IcuTranslator
   private
 
   def handle_pluralization_hash(hash)
-    hash.map { |match, text| "#{match} {#{text}}" }.join(" ")
+    hash.map { |match, text| "#{match} {#{text}}" }.join(' ')
   end
 
   def handle_array(array, level = 0)
@@ -26,6 +26,6 @@ class IcuTranslator
       end
     end.compact
 
-    level.odd? ? "{#{result.join(', ')}}" : result.join(" ")
+    level.odd? ? "{#{result.join(', ')}}" : result.join(' ')
   end
 end
