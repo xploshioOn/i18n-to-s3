@@ -17,7 +17,7 @@ gem 'hashdiff', '~> 1.0.1'
 # Parse and format i18n messages using ICU MessageFormat
 gem 'message_format'
 # json gem
-gem 'json', '2.3.1'
+gem 'json', '2.5.1'
 
 # development and test groups are not bundled as part of the deployment
 group :development, :test do
