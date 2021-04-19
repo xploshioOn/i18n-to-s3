@@ -2,7 +2,7 @@
 
 class TranslationService
   def translate(text:, from:, to:, split_newlines: false)
-    return text if unsopported_languages.include?(to)
+    return OpenStruct.new(text: text) if unsopported_languages.include?(to)
 
     if split_newlines
       result = text.split("\n").map do |sub_text|
